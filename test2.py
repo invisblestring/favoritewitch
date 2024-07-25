@@ -13,7 +13,7 @@ def load_local_lottiefile(filepath):
     return content
 
 # Local path to the JSON file
-local_filepath = "/mount/src/favoritewitch/main_scene3.json"
+local_filepath = "//mount//src//favoritewitch//main_scene3.json"
 
 mixed = load_local_lottiefile(local_filepath)
 
