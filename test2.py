@@ -21,7 +21,7 @@ def example():
 st.title("good morning Witchy")
 ##witch = load_lottiefile("C:\\Users\\abalm\\test\\1721807061415.json")
 ##love = load_lottiefile("C:\\Users\\abalm\\test\\1721810066289.json")
-mixed = load_lottiefile("main_scene3.json")
+mixed = load_lottiefile("https://github.com/invisblestring/favoritewitch/blob/main/Main_Scene3.json")
 
 
  
