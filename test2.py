@@ -3,10 +3,22 @@ import streamlit as st
 from streamlit_extras.let_it_rain import rain
 import json
 from streamlit_lottie import st_lottie
+import requests
 
-def load_lottiefile(filepath: str):
-    with open (filepath, "r") as f:
-        return json.load(f)
+def load_lottiefile(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        content = response.text
+        # Process the file content
+        return content
+    else:
+        st.error("Failed to fetch file. Status code: {}".format(response.status_code))
+        return None
+
+# GitHub raw URL for the file
+github_raw_url = "https://github.com/invisblestring/favoritewitch/blob/main/Main_Scene3.json"
+
+
 
 
 def example():
@@ -21,8 +33,11 @@ def example():
 st.title("good morning Witchy")
 ##witch = load_lottiefile("C:\\Users\\abalm\\test\\1721807061415.json")
 ##love = load_lottiefile("C:\\Users\\abalm\\test\\1721810066289.json")
-mixed = load_lottiefile("main/Main_Scene3.json")
-
+##mixed = load_lottiefile("main/Main_Scene3.json")
+if mixed:
+    # Process the file content as needed
+    st.write(mixed)
+mixed = load_lottiefile(github_raw_url)
 
  
 resault = st.button("Click me ^_^", on_click=example)
