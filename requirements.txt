@@ -1,3 +1,4 @@
+streamlit-lottie
 streamlit_extras
-json
-st_lottie
+requests
+Json
