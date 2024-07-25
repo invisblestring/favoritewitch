@@ -3,24 +3,23 @@ import streamlit as st
 from streamlit_extras.let_it_rain import rain
 import json
 from streamlit_lottie import st_lottie
-import requests
-
-def load_lottiefile(url):
-    response = requests.get(url)
-    if response.status_code == 200:
-        content = response.text
-        # Process the file content
-        return content
-    else:
-        st.error("Failed to fetch file. Status code: {}".format(response.status_code))
-        return None
-
-# GitHub raw URL for the file
-github_raw_url = "https://app.lottiefiles.com/share/bf9c42a1-f0b9-47d8-99f6-d8a1c573b989"
 
 
 
 
+def load_local_lottiefile(filepath):
+    with open(filepath, "r") as f:
+        content = json.load(f)
+    return content
+
+# Local path to the JSON file
+local_filepath = "main_scene3.json"
+
+mixed = load_local_lottiefile(local_filepath)
+
+if mixed:
+    # Display the parsed JSON content
+    st.write(mixed)
 def example():
     rain(
         emoji="🌸",
@@ -35,10 +34,7 @@ st.title("good morning Witchy")
 ##love = load_lottiefile("C:\\Users\\abalm\\test\\1721810066289.json")
 ##mixed = load_lottiefile("main/Main_Scene3.json")
 
-mixed = load_lottiefile(github_raw_url)
-if mixed:
-    # Display the parsed JSON content
-    st.write(mixed)
+
 
  
 resault = st.button("Click me ^_^", on_click=example)
