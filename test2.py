@@ -34,9 +34,7 @@ st.title("good morning Witchy")
 ##witch = load_lottiefile("C:\\Users\\abalm\\test\\1721807061415.json")
 ##love = load_lottiefile("C:\\Users\\abalm\\test\\1721810066289.json")
 ##mixed = load_lottiefile("main/Main_Scene3.json")
-if mixed:
-    # Process the file content as needed
-    st.write(mixed)
+
 mixed = load_lottiefile(github_raw_url)
 
  
