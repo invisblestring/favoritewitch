@@ -16,7 +16,7 @@ def load_lottiefile(url):
         return None
 
 # GitHub raw URL for the file
-github_raw_url = "https://github.com/invisblestring/favoritewitch/blob/main/Main_Scene3.json"
+github_raw_url = "https://lottie.host/2535eb4c-2c16-4bfa-a777-97fff1b064d7/dowEDsEqeD.json"
 
 
 
