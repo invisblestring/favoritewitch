@@ -36,6 +36,9 @@ st.title("good morning Witchy")
 ##mixed = load_lottiefile("main/Main_Scene3.json")
 
 mixed = load_lottiefile(github_raw_url)
+if mixed:
+    # Display the parsed JSON content
+    st.write(mixed)
 
  
 resault = st.button("Click me ^_^", on_click=example)
